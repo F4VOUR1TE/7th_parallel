@@ -56,10 +56,12 @@ Builder.load_string("""
             pos_hint:{"center_x": 0.93, "center_y": 0.93}
             md_bg_color : '32B68F'
             font_name : 'Montserrat2.ttf'
+            on_press: root.manager.current = 'info'
                  
         MDIconButton:
-            icon:"Gift.png"    
-            pos_hint:{"center_x": 0.02, "center_y": 0.96}
+            icon:"gift.png"    
+            pos_hint:{"center_x": 0.03, "center_y": 0.96}
+            on_press: root.manager.current = 'gift'
                          
                  
         MDRoundFlatButton
@@ -76,7 +78,125 @@ Builder.load_string("""
             pos_hint:{"center_x": 0.5, "center_y": 0.75}
             size_hint :  (.2, .2)
 
-
+<GiftScreen>
+    MDScreen:
+        FitImage:
+            source : 'bg.png'
+        Image:
+            source : 'Bear.png'
+            pos_hint:{"center_x": 0.73, "center_y": 0.1}
+            size_hint :  (.6, .6)
+        MDLabel:
+            text: "Подарки"
+            font_name : 'Montserrat2.ttf'
+            pos_hint:{"center_x": 0.8, "center_y": 0.95}
+            theme_text_color: "Custom"
+            text_color: 'black'
+            font_size: "34sp"
+            bold: True
+        MDIconButton:
+            icon:"cross.png"    
+            pos_hint:{"center_x": 0.03, "center_y": 0.95}
+            on_press: root.manager.current = 'main'
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.25, "center_y": 0.7}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.50, "center_y": 0.7}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.75, "center_y": 0.7}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11    
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.25, "center_y": 0.55}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.50, "center_y": 0.55}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.75, "center_y": 0.55}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11 
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.25, "center_y": 0.4}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.50, "center_y": 0.4}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11
+        Button:
+			size_hint: .11, .11
+			pos_hint:{"center_x": 0.75, "center_y": 0.4}
+			background_color: 0,0,0,0
+			Image:
+				id: my_image
+				source: 'gift1.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+				size_hint: .11, .11 
+<InfoScreen>:
+    MDScreen:
+        FitImage:
+            source : 'bg2.png'
+        MDIconButton:
+            icon:"cross.png"    
+            pos_hint:{"center_x": 0.03, "center_y": 0.95}
+            on_press: root.manager.current = 'main'
+                
 """)
 
 class MainMenu(MDScreen):
@@ -85,12 +205,18 @@ class MainMenu(MDScreen):
 class AuthorizationScreen(MDScreen):
      pass
 
+class GiftScreen(MDScreen):
+     pass
 
+class InfoScreen(MDScreen):
+     pass
 class EcoBottle(MDApp):
     def build(self):
         sm = ScreenManager()
         sm.add_widget(AuthorizationScreen(name='auth'))
         sm.add_widget(MainMenu(name='main'))
+        sm.add_widget(GiftScreen(name='gift'))
+        sm.add_widget(InfoScreen(name='info'))
         #self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
        
