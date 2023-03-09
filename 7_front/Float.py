@@ -12,8 +12,8 @@ from kivy.uix.modalview import ModalView
 from kivymd.uix.fitimage import FitImage
 from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
-from kivy.core.window import Window 
-from kivy.uix.screenmanager import ScreenManager, Screen 
+from kivy.core.window import Window
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 Builder.load_string("""
 <AuthorizationScreen>:
@@ -22,10 +22,13 @@ Builder.load_string("""
             source : 'bg.png'
         MDTextField:
             hint_text: "Введите ваш номер телефона"
-            font_name : 'Montserrat2.ttf'
-            mode: "fill"
-            fill_color: 0, 0, 0, 0.4
+            color_mode: "fill"
+            fill_color: 0, 0.3, 0, 0.4
             pos_hint:{"center_x": 0.5, "center_y": 0.5}
+            line_color_focus: \'#2BA6A6\'
+            line_color_normal: \'#FFFFFF\'
+            size_hint_x: 0.5
+            width : 500
 
         MDRoundFlatButton:
             text:"Авторизоваться"
@@ -219,59 +222,17 @@ class EcoBottle(MDApp):
         sm.add_widget(InfoScreen(name='info'))
         #self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
-       
+
+
+        self.theme_cls.theme_style = "Dark"
+
+
         # button_ball_pos_x = 0.5
         # button_ball_pos_y = 0.5
         Window.size = (400, 750)
-            
+
         return (
             sm
-        #     MDScreen(
-        
-        #         FitImage(
-        #             source = '1bg.png',
-                    
-        #         ),
-        #         MDRoundFlatButton(
-        #             text="Сканировать",
-        #             font_size= "38sp",
-        #             text_color = 'black',
-        #             pos_hint={"center_x": 0.5, "center_y": 0.15},
-        #             md_bg_color = '32B68F',
-        #             font_name = 'Montserrat2.ttf',
-        #                 #font_style = 'H3',
-        #         ),
-        #         MDRoundFlatButton(
-        #             text="?",
-        #             font_size= "30sp",
-        #             text_color = 'black',
-        #             pos_hint={"center_x": 0.93, "center_y": 0.93},
-        #             md_bg_color = '32B68F',
-        #             font_name = 'Montserrat2.ttf'
-        #         ),
-        #         MDIconButton(
-        #             icon="Gift.png",
-        #                 #size = self.parent.size,
-        #             pos_hint={"center_x": 0.02, "center_y": 0.96},
-        #                 # user_font_size = "24sp"
-        #         ),
-        #         MDRoundFlatButton(
-        #             text = "100 баллов",
-        #             pos_hint={"center_x": button_ball_pos_x, "center_y": button_ball_pos_y},
-        #             text_color = 'black',
-        #             font_size= "34sp",
-        #             md_bg_color = (0,0,0,0),
-        #             font_name = 'Montserrat2.ttf'
-        #         ),
-               
-        #         Image(
-        #             source = 'user.png',
-        #             pos_hint={"center_x": 0.5, "center_y": 0.75},
-                    
-        #             size_hint =  (.2, .2)
-        #         )
-               
-        #     )
         )
 
 
