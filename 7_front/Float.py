@@ -213,7 +213,7 @@ Builder.load_string("""
             font_size: "19sp"
             bold: True
         MDLabel:
-            text: 'Вк - @Konskaya zalupa'
+            text: 'Вк - @pasha ne chudi'
             font_name : 'Montserrat2.ttf'
             pos_hint:{"center_x": 0.51, "center_y": 0.11}
             theme_text_color: "Custom"
