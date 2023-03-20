@@ -19,16 +19,13 @@ Builder.load_string("""
 <AuthorizationScreen>:
     MDScreen:
         FitImage:
-            source : 'bg.png'
+            source : 'pic/bg.png'
         MDTextField:
             hint_text: "Введите ваш номер телефона"
-            color_mode: "fill"
-            fill_color: 0, 0.3, 0, 0.4
+            font_name : 'Montserrat2.ttf'
+            mode: "fill"
+            fill_color: 0, 0, 0, 0.4
             pos_hint:{"center_x": 0.5, "center_y": 0.5}
-            line_color_focus: \'#2BA6A6\'
-            line_color_normal: \'#FFFFFF\'
-            size_hint_x: 0.5
-            width : 500
 
         MDRoundFlatButton:
             text:"Авторизоваться"
@@ -41,7 +38,7 @@ Builder.load_string("""
 <MainMenu>:
     MDScreen:
         FitImage:
-            source : '1bg.png'
+            source : 'pic/1bg.png'
                     
         MDRoundFlatButton:
             text:"Сканировать"
@@ -54,22 +51,22 @@ Builder.load_string("""
                  
         MDRoundFlatButton:
             text:"?"
-            font_size: "30sp"
+            font_size: "37sp"
             text_color : 'black'
-            pos_hint:{"center_x": 0.93, "center_y": 0.93}
+            pos_hint:{"center_x": 0.91, "center_y": 0.95}
             md_bg_color : '32B68F'
             font_name : 'Montserrat2.ttf'
             on_press: root.manager.current = 'info'
                  
         MDIconButton:
-            icon:"gift.png"    
+            icon:"pic/gift.png"    
             pos_hint:{"center_x": 0.03, "center_y": 0.96}
             on_press: root.manager.current = 'gift'
                          
                  
         MDRoundFlatButton
             text : "100 баллов"
-            pos_hint:{"center_x": 0.5, "center_y": 0.5}
+            pos_hint:{"center_x": 0.5, "center_y": 0.422}
             text_color : 'black'
             font_size: "34sp"
             md_bg_color : (0,0,0,0)
@@ -77,29 +74,29 @@ Builder.load_string("""
             
                
         Image:
-            source : 'user.png'
-            pos_hint:{"center_x": 0.5, "center_y": 0.75}
-            size_hint :  (.2, .2)
+            source : 'pic/user.png'
+            pos_hint:{"center_x": 0.5, "center_y": 0.65}
+            size_hint :  (.3, .3)
 
 <GiftScreen>
     MDScreen:
         FitImage:
-            source : 'bg.png'
+            source : 'pic/bg.png'
         Image:
-            source : 'Bear.png'
+            source : 'pic/Bear.png'
             pos_hint:{"center_x": 0.73, "center_y": 0.1}
             size_hint :  (.6, .6)
         MDLabel:
             text: "Подарки"
             font_name : 'Montserrat2.ttf'
-            pos_hint:{"center_x": 0.8, "center_y": 0.95}
+            pos_hint:{"center_x": 0.85, "center_y": 0.95}
             theme_text_color: "Custom"
             text_color: 'black'
             font_size: "34sp"
             bold: True
         MDIconButton:
-            icon:"cross.png"    
-            pos_hint:{"center_x": 0.03, "center_y": 0.95}
+            icon:"pic/cross.png"    
+            pos_hint:{"center_x": 0.03, "center_y": 0.98}
             on_press: root.manager.current = 'main'
         Button:
 			size_hint: .11, .11
@@ -107,7 +104,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -117,7 +114,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -127,7 +124,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11    
@@ -137,7 +134,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -147,7 +144,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -157,7 +154,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11 
@@ -167,7 +164,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -177,7 +174,7 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11
@@ -187,18 +184,50 @@ Builder.load_string("""
 			background_color: 0,0,0,0
 			Image:
 				id: my_image
-				source: 'gift1.png'
+				source: 'pic/gift1.png'
 				center_x: self.parent.center_x
 				center_y: self.parent.center_y
 				size_hint: .11, .11 
 <InfoScreen>:
     MDScreen:
         FitImage:
-            source : 'bg2.png'
+            source : 'pic/bg2.png'
         MDIconButton:
-            icon:"cross.png"    
-            pos_hint:{"center_x": 0.03, "center_y": 0.95}
+            icon:"pic/cross.png"    
+            pos_hint:{"center_x": 0.03, "center_y": 0.98}
             on_press: root.manager.current = 'main'
+        MDLabel:
+            text: 'Это приложение создано, для того чтобы люди которые заботятся об окружающей среде и планете, получали бонусы за каждую сданную бутылку. Для того чтобы начать копить баллы на подарки, вам необходимо нажать на кнопку "Сканировать" и сделать 2 фотографии: первую, как вы вставили бутылку и вторую, как аппарат принял бутылку. После чего вы получите 1 балл за каждую сданную бутылку. Далее при накоплении баллов вы можете зайти в раздел "Подарки" и посмотреть сколько вам осталось накопить.'
+            font_name : 'Montserrat2.ttf'
+            pos_hint:{"center_x": 0.51, "center_y": 0.73}
+            theme_text_color: "Custom"
+            text_color: 'black'
+            font_size: "19sp"
+            bold: True
+        MDLabel:
+            text: 'За остальными вопросами обращайтесь по телефону +7 995 888 88 88 Или пишите в наши соц.сети:'
+            font_name : 'Montserrat2.ttf'
+            pos_hint:{"center_x": 0.51, "center_y": 0.20}
+            theme_text_color: "Custom"
+            text_color: 'black'
+            font_size: "19sp"
+            bold: True
+        MDLabel:
+            text: 'Вк - @Konskaya zalupa'
+            font_name : 'Montserrat2.ttf'
+            pos_hint:{"center_x": 0.51, "center_y": 0.11}
+            theme_text_color: "Custom"
+            text_color: 'black'
+            font_size: "19sp"
+            bold: True
+        MDLabel:
+            text: 'Телеграм - @pasha ne chudi'
+            font_name : 'Montserrat2.ttf'
+            pos_hint:{"center_x": 0.51, "center_y": 0.08}
+            theme_text_color: "Custom"
+            text_color: 'black'
+            font_size: "19sp"
+            bold: True
                 
 """)
 
@@ -220,11 +249,9 @@ class EcoBottle(MDApp):
         sm.add_widget(MainMenu(name='main'))
         sm.add_widget(GiftScreen(name='gift'))
         sm.add_widget(InfoScreen(name='info'))
-        #self.theme_cls.theme_style = "Dark"
+        
         self.theme_cls.primary_palette = "Green"
-
-
-        self.theme_cls.theme_style = "Dark"
+        #self.theme_cls.theme_style = "Dark"
 
 
         # button_ball_pos_x = 0.5
