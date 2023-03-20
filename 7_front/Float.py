@@ -60,7 +60,7 @@ Builder.load_string("""
                  
         MDIconButton:
             icon:"pic/gift.png"    
-            pos_hint:{"center_x": 0.03, "center_y": 0.96}
+            pos_hint:{"center_x": 0.06, "center_y": 0.96}
             on_press: root.manager.current = 'gift'
                          
                  
